@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="//www.parsecdn.com/js/parse-1.3.4.min.js"></script>
+    <script>   
+   Parse.initialize("eZdKOtiGyN4h49ANb87r9hM59mYGPmcqmeKSyMsZ", "FSPPuxqNVLvZvwe05fuVwmIYdBXaiN72Hbry3tae");</script>
+<title>Facebook Login JavaScript Example</title>
+<meta charset="UTF-8">
+</head>
+<body>
+   <script>      
+   function checkfields(){    
+      event.preventDefault();
+      var User=Parse.Object.extend("User");
+      var user=new User();
+      user.set("username", $('#field1').val());
+      user.set("password", $('#field2').val());
+      user.set("firstname",$('#field3').val());
+      user.set("lastname", $('#field4').val());
+      user.set("emailaddress",$('#field5').val());
+      user.signUp(null,{
+        success:function(user){
+          alert("SUCCESS");
+          window.location.href = "http://localhost/sb_fls/profile.html";
+        },
+        error:function(user,error){
+          alert("ERROR6 "+error.message);
+        }
+      });
+   }
+   </script>
+   <form onSubmit="return checkfields()">
+  Username:<br>
+  <input id="field1"type="text" name="username" required>
+  <br>
+  Password:<br>
+  <input id="field2" type="text" name="password" required>
+  <br>
+  First name:<br>
+  <input id="field3" type="text" name="firstname" required>
+  <br>
+  Last name:<br>
+  <input id="field4" type="text" name="lastname" required>
+  <br>
+  Email address:<br>
+  <input id="field5" type="text" name="emailaddress" required>
+  <br><br>
+  <input type="submit" value="Submit">
+   </form>
+</body>
+</html>

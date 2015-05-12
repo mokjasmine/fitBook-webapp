@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+	<head>
+		<link type="text/css" rel="stylesheet" href="styleexplore.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="//www.parsecdn.com/js/parse-1.3.4.min.js"></script>
+		<script type="text/javascript" src="togglescript.js"></script>
+		<title>Explore</title>
+	</head>
+	<body>
+		<script>Parse.initialize("eZdKOtiGyN4h49ANb87r9hM59mYGPmcqmeKSyMsZ", "FSPPuxqNVLvZvwe05fuVwmIYdBXaiN72Hbry3tae");
+			$(document).ready(function(){
+				var current_user=Parse.User.current();
+				document.getElementById("header").innerHTML=current_user.get("firstname");			
+			});							
+			
+		    window.fbAsyncInit = function() {
+		    Parse.FacebookUtils.init({
+		      appId      : '1564814363762908',   
+		      status     :true,
+		      cookie     : true,  // enable cookies to allow the server to access 
+		                          // the session
+		      xfbml      : true,  // parse social plugins on this page
+		      version    : 'v2.1' // use version 2.1
+		    });
+
+		    };
+		     (function(d, s, id){
+		      var js, fjs = d.getElementsByTagName(s)[0];
+		      if (d.getElementById(id)) return;
+		      js = d.createElement(s); js.id = id;
+		      js.src = "//connect.facebook.net/en_US/sdk.js";
+		      fjs.parentNode.insertBefore(js, fjs);
+		    }(document, 'script', 'facebook-jssdk'));
+
+		   </script>		  
+		<div id="filter">
+		</div>
+		
+		<div id="nav">
+			<ul>
+				<li><a href="explore.html" class="current">Explore</a></li>
+				<li><a href="following.html">Following</a></li>
+				<li><a id="header"href="profile.html">(username)</a></li>
+			</ul>
+		</div>
+		<h1 id="title">Jas & Gome's Webby Web</h1>
+		<center><p>Facebook friends     &#8226     Everyone</p>
+		<div id="people">
+			<table>
+				<tr>
+					<td class="slide"><img src="https://pbs.twimg.com/profile_images/3345897998/7452ab72fdad1e07585e846ce291de92.jpeg" />
+						<!--<p class="view">hi</p>-->
+					 </td>
+					 <td><img src="https://pbs.twimg.com/profile_images/3345897998/7452ab72fdad1e07585e846ce291de92.jpeg" /> </td>
+					<td><img src="https://pbs.twimg.com/profile_images/3345897998/7452ab72fdad1e07585e846ce291de92.jpeg" /> </td>
+					<td><img src="https://pbs.twimg.com/profile_images/3345897998/7452ab72fdad1e07585e846ce291de92.jpeg" /> </td>
+				</tr>
+				<tr>
+					<td><img src="https://pbs.twimg.com/profile_images/3345897998/7452ab72fdad1e07585e846ce291de92.jpeg" /> </td>
+					<td><img src="https://pbs.twimg.com/profile_images/3345897998/7452ab72fdad1e07585e846ce291de92.jpeg" /> </td>
+					<td><img src="https://pbs.twimg.com/profile_images/3345897998/7452ab72fdad1e07585e846ce291de92.jpeg" /> </td>
+					<td><img src="https://pbs.twimg.com/profile_images/3345897998/7452ab72fdad1e07585e846ce291de92.jpeg" /> </td>
+				</tr>
+				<tr>
+					<td><img src="https://pbs.twimg.com/profile_images/3345897998/7452ab72fdad1e07585e846ce291de92.jpeg" /> </td>
+					<td><img src="https://pbs.twimg.com/profile_images/3345897998/7452ab72fdad1e07585e846ce291de92.jpeg" /> </td>
+					<td><img src="https://pbs.twimg.com/profile_images/3345897998/7452ab72fdad1e07585e846ce291de92.jpeg" /> </td>
+					<td><img src="https://pbs.twimg.com/profile_images/3345897998/7452ab72fdad1e07585e846ce291de92.jpeg" /> </td>
+				</tr>
+			</table></center>
+		</div>
+		<div id="lightbox">
+			<button id="button">x</button>
+		</div>
+	</body>
+</html>

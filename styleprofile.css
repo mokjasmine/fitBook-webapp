@@ -1,0 +1,175 @@
+body {
+	background-color: #f3f3f3;
+	<!--#fefcff-->
+}
+
+#title {
+	font-family: "Andale Mono";
+	text-align: center;
+	position: relative;
+
+}
+
+#profpic {
+	
+	float: left;
+	width: 19%;
+	text-align: left;
+	margin-left: 10%;
+}
+
+
+img {
+	height: 200px;
+	width: 200px;
+}
+
+#name {
+	font-family: "Lucida Sans Unicode";
+}
+
+#logs {
+	font-family: "Lucida Sans Unicode";
+	float: left;
+	left:1%;
+	position: relative;
+	margin: 0 auto;
+	width: 35%;
+	padding: 30px;
+	background-color: #ffffff;
+	max-width: 700px
+}
+
+
+#followers {
+	float: right;
+	position: relative;
+	font-family: "Lucida Sans Unicode";
+	width: 15%;
+	text-align:center;
+	top:-15%;
+	margin-right: 4%;
+	background-color: rgba(255, 255, 255, 0.5);
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+
+#nav {
+	position: relative;
+	margin: 0 auto;
+	text-align:center;
+	list-style-type: none;	
+	height: 100px;
+}
+
+ul {
+	position:relative;
+	margin: 0;
+	text-align: center;
+	list-style-type: none;
+	font-family: "Lucida Sans Unicode";
+	display: inline-block;
+}
+
+li {
+	left:6%;
+	position:relative;
+	display: inline-block;
+	background-color: #000000;
+	float:center;
+	list-style-type: none;
+	background-color:#ffffff;
+	background-color: rgba(255, 255, 255, 0.8);
+}
+
+a {
+	display: block;
+	width: 150px;
+}
+
+a:link {
+	padding: 20px;
+	text-decoration:none;
+	color: #000000;
+}
+
+a:visited {
+	text-decoration:none;
+	color: #000000;
+}
+
+a:hover {
+	padding: 20px;
+	background-color: #2db6c0;
+	color: #ffffff;
+}
+
+a.current{
+	padding: 20px;
+	text-decoration:none;
+	color: #2db6c0;
+}
+
+a.current:hover {
+	padding: 20px;
+	background-color: #2db6c0;
+	color: #ffffff;
+}
+#sub_log {
+   border-top: 1px solid #2db6c0;
+   background: #4882a8;
+   background: -webkit-gradient(linear, left top, left bottom, from(#2db6c0), to(#4882a8));
+   background: -webkit-linear-gradient(top, #2db6c0, #4882a8);
+   background: -moz-linear-gradient(top, #2db6c0, #4882a8);
+   background: -ms-linear-gradient(top, #2db6c0, #4882a8);
+   background: -o-linear-gradient(top, #2db6c0, #4882a8);
+   padding: 4.5px 9px;
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   border-radius: 8px;
+   text-shadow:none;
+   border-shadow:none;
+   color: white;
+   font-size: 13px;
+   font-family: "Lucida Sans Unicode";
+   text-decoration: none;
+   vertical-align: middle;
+   position:relative;
+   left:90%;
+   }
+#hor:hover {
+   border-top-color: #28597a;
+   background: #28597a;
+   color: #ccc;
+   }
+#sub_log:active {
+   border-top-color: #1b435e;
+   background: #1b435e;
+   }
+
+#fbfriends{
+	position:relative;
+	float:right;
+	background-color: transparent;
+	border:none;
+	overflow:hidden;
+	outline:none;
+	font-family: "Lucida Sans Unicode";
+}
+#fblogout{
+	position:relative;
+	float:right;
+	background-color: transparent;
+	border:none;
+	overflow:hidden;
+	outline:none;
+	font-family: "Lucida Sans Unicode";
+}
+#TypeHere{
+	font-family: "Lucida Sans Unicode";
+}
+
+.logentries{
+	font-family: "Lucida Sans Unicode";
+}

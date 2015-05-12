@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="//www.parsecdn.com/js/parse-1.3.4.min.js"></script>
+<title>Facebook Login JavaScript Example</title>
+<meta charset="UTF-8">
+</head>
+<body>
+   <script>Parse.initialize("eZdKOtiGyN4h49ANb87r9hM59mYGPmcqmeKSyMsZ", "FSPPuxqNVLvZvwe05fuVwmIYdBXaiN72Hbry3tae");
+    window.fbAsyncInit = function() {
+    Parse.FacebookUtils.init({
+      appId      : '1564814363762908',   
+      status     :true,
+      cookie     : true,  // enable cookies to allow the server to access 
+                          // the session
+      xfbml      : true,  // parse social plugins on this page
+      version    : 'v2.1' // use version 2.1
+    });
+
+    $(document).ready(function(){
+      FB.getLoginStatus(function(response) {
+        $("#fblogout").click(function(){
+            if (response.status === 'connected') {        
+             FB.logout();   
+             Parse.User.logOut();
+              window.location.href = "http://localhost/sb_fls/fb_logintest.html"; 
+            } else if (response.status === 'not_authorized') { 
+               FB.logout();   
+             Parse.User.logOut();
+              window.location.href = "http://localhost/sb_fls/fb_logintest.html"; 
+            } else {        
+               FB.logout();   
+             Parse.User.logOut();
+              window.location.href = "http://localhost/sb_fls/fb_logintest.html"; 
+            }
+           });
+       });       
+      });
+    };
+     (function(d, s, id){
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+    </script>
+  <div>HELLO</div>
+
+  <button id="fblogout">Log out</button>
+</body>
+</html>

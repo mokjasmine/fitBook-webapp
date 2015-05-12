@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+	<head>
+		 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+ 		 <script src="//www.parsecdn.com/js/parse-1.3.4.min.js"></script>
+ 		 <script src="login.js"></script> 
+		<link type="text/css" rel="stylesheet" href="styleprofile.css" />
+		<title>name</title>
+	</head>
+	<body>	
+		<script>Parse.initialize("eZdKOtiGyN4h49ANb87r9hM59mYGPmcqmeKSyMsZ", "FSPPuxqNVLvZvwe05fuVwmIYdBXaiN72Hbry3tae");
+			$(document).ready(function(){
+				var current_user=Parse.User.current();
+				document.getElementById("headername").innerHTML=current_user.get("firstname");
+				document.getElementById("name").innerHTML=current_user.get("firstname")+" "+current_user.get("lastname");
+			});							
+			
+		    window.fbAsyncInit = function() {
+		    Parse.FacebookUtils.init({
+		      appId      : '1564814363762908',   
+		      status     :true,
+		      cookie     : true,  // enable cookies to allow the server to access 
+		                          // the session
+		      xfbml      : true,  // parse social plugins on this page
+		      version    : 'v2.1' // use version 2.1
+		    });
+
+		    $(document).ready(function(){
+		      FB.getLoginStatus(function(response) {
+		        $("#fblogout").click(function(){
+		            if (response.status === 'connected') {        
+		             FB.logout();   
+		             Parse.User.logOut();
+		              window.location.href = "http://localhost/sb_fls/home.html"; 
+		            } else if (response.status === 'not_authorized') { 
+		               FB.logout();   
+		             Parse.User.logOut();
+		              window.location.href = "http://localhost/sb_fls/home.html"; 
+		            } else {        
+		               FB.logout();   
+		             Parse.User.logOut();
+		              window.location.href = "http://localhost/sb_fls/home.html"; 
+		            }
+		           });
+		       });     
+		      var Log=Parse.Object.extend("Log");
+		      var query=new Parse.Query(Log);
+		     var current_user=Parse.User.current();
+		      query.equalTo("userid",current_user.id);
+		      query.find({
+		      		success:function(results)
+		      		{
+		      			for(var i=0;i<results.length;i++)
+		      			{
+		      				var object=results[i];
+		      				$("<p>"+object.attributes.message+"</p>").css("font-family","Lucida Sans Unicode").appendTo($("#logs"));	     
+		      			}
+		      		}
+		      	});
+		      });
+		    };
+		     (function(d, s, id){
+		      var js, fjs = d.getElementsByTagName(s)[0];
+		      if (d.getElementById(id)) return;
+		      js = d.createElement(s); js.id = id;
+		      js.src = "//connect.facebook.net/en_US/sdk.js";
+		      fjs.parentNode.insertBefore(js, fjs);
+		    }(document, 'script', 'facebook-jssdk'));
+
+		   </script>		   
+		<div id="nav">
+			<ul>
+				<li><a href="explore.html">Explore</a></li>
+				<li><a href="following.html">Following</a></li>
+				<li><a id="headername" href="profile.html" class="current">(username)</a></li>
+			</ul>
+			<button id="fblogout">Log out</button>
+  			<button id="fbfriends">Friends</button>
+		</div>
+		
+			<div id="profpic">
+				<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRKC_UcE672-QqdEc7NtKaXK4QHviw9TR53eDXJBEfVOkV-AT3i" />
+				<h3 id="name" align="center" style="position:relative;left:-22%">(username)</h2>
+			</div>
+
+			<div id="logs">
+				<div id="inputbox"><textarea id="TypeHere" rows="10" style="resize:none;width:100%;height:100%;">Enter a message.</textarea>
+				<button id="sub_log" onclick="newLog()">submit</button></div>
+			</div>
+
+			<div id="followers">
+				<h3>Followers</h3>
+			</div> 		
+
+	</body>
+</html>
